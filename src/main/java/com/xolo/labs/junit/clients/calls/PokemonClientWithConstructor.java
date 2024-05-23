@@ -25,11 +25,23 @@ public class PokemonClientWithConstructor {
         this.client = builder.baseUrl(host).build();
     }
 
-    public Mono<String> getPokemon() {
+    public Mono<String> getPokemonString() {
         return this.client.get().uri(basePathV2.concat(getPokemonEndpoint)).accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(PokemonDto.class)
                 .map(PokemonDto::toString);
+    }
+
+    public Mono<PokemonDto> getPokemonObject() {
+        return this.client.get().uri(basePathV2.concat(getPokemonEndpoint)).accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(PokemonDto.class);
+    }
+
+    public Mono<PokemonDto> getPokemonJackson() {
+        return this.client.get().uri(basePathV2.concat(getPokemonEndpoint)).accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(PokemonDto.class);
     }
 
 }

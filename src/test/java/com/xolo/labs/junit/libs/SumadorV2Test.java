@@ -18,11 +18,14 @@ import static org.mockito.Mockito.never;
  */
 class SumadorV2Test {
 
+    // 1. Preperamos el mock para el test
     @Mock
     private Sumador sumador;
 
     @BeforeEach
     void setUp() {
+        // 2. Inicializamos el mock, OJO: no se está haciendo o usando elmetodo real.
+        // PD: Mockito lo hace por nosotros para poder controlar el objeto mockeado
         sumador = Mockito.mock(Sumador.class);
     }
 
@@ -32,9 +35,9 @@ class SumadorV2Test {
      */
     @Test
     void sumar_verificarUsoDelMetodo() {
-
+        // 3. Utilizamos el mock como si fuera el objeto real, pero con el control de mockito
         sumador.sumar(5, 5);
-
+        // 4. Verificamos que el metodo sumar fue llamado con los argumentos 5, 5
         Mockito.verify(sumador).sumar(5, 5);
     }
 

@@ -39,12 +39,6 @@ class SumadorV3Test {
         Mockito.verify(sumadorSpy).sumar(5, 5);
     }
 
-    @Test
-    void sumar_usaSpy_v2() {
-        sumadorSpy.sumar(5, 5);
-
-        Mockito.verify(sumadorSpy).sumar(5, 5);
-    }
 
     @Test
     void sumar_withStumbbing_value(){
@@ -78,7 +72,7 @@ class SumadorV3Test {
     }
 
     /**
-     * Este medotodo esta fallando porque el spy hacia el objeto real no esta funcionando
+     * Este medotodo esta fallando porque el spy hacia el objeto real no esta funcionando (Mockito no lo permite)
      * El utilizar un spy no es recomendable para este tipo de pruebas
      * El spy es para monitorear un objeto real y no para hacer stumbbing
      */

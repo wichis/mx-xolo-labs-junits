@@ -18,11 +18,12 @@ import static org.mockito.Mockito.never;
  */
 class SumadorV3Test {
 
-
+    // 1. Lo utilizaremos para todos los metodos
     private Sumador sumadorSpy;
 
     @BeforeEach
     void setUp() {
+        // 2. Lo inicializamos como spy de un objeto real (new Sumador())
         sumadorSpy = Mockito.spy(new Sumador());
     }
 
@@ -32,8 +33,9 @@ class SumadorV3Test {
      */
     @Test
     void sumar_usaSpy_v1() {
+        // 3. Utilizamos el spy como si fuera el objeto real pero como monitor
         sumadorSpy.sumar(5, 5);
-
+        // 4. Verificamos que el metodo sumar fue llamado con los argumentos 5, 5
         Mockito.verify(sumadorSpy).sumar(5, 5);
     }
 

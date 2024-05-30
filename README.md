@@ -1,6 +1,13 @@
-# 
+# Laboratorio para Junits
 
-Laboratorio para Junits
+## Scope
 
-El codig base esta invetado para cubri escnearios.
+- Pruebas unitarias basicas.
+- Pruebas unitarias con Mockito.
+  - Usando Mock
+  - Usando Spy 
+
+## Codigos base
+
+- Los codigos base son muy simples para poder hacer prubas de concepto y uso.
 

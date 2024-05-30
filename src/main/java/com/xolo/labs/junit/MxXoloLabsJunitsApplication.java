@@ -32,11 +32,11 @@ public class MxXoloLabsJunitsApplication {
 //		logger.info(pokemonCli2.getPokemonString().block());
 //		logger.info("Pokemon name: {}",pokemonCli2.getPokemonObject().block().getName());
 //
-//		PokemonClientWithSetterInjection pokemonCli = context.getBean(PokemonClientWithSetterInjection.class);
-//		logger.info(pokemonCli.getPokemon().block());
+		//PokemonClientWithSetterInjection pokemonCli = context.getBean(PokemonClientWithSetterInjection.class);
+		//logger.info(pokemonCli.getPokemn().block());
 
-		PokemonClientWithJackson pokemonClientWithJackson = context.getBean(PokemonClientWithJackson.class);
-		logger.info("Pokemon name > From object node: {}", pokemonClientWithJackson.getPokemon().block().createObjectNode().get("name").asText());
+		//PokemonClientWithJackson pokemonClientWithJackson = context.getBean(PokemonClientWithJackson.class);
+		//logger.info("Pokemon name > From object node: {}", pokemonClientWithJackson.getPokemon().block().createObjectNode().get("name").asText());
 
 		context.close();// Closing the context
 		logger.info("=== FIN =====================================");

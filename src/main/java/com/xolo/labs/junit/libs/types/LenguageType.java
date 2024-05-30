@@ -8,5 +8,5 @@ public enum LenguageType {
     ITALIAN,
     PORTUGUESE,
     RUSSIAN,
-    NAKOTA;
+    NAKOTA, UNKNOWN;
 }

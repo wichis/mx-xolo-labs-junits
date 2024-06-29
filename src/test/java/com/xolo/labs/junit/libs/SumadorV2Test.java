@@ -2,6 +2,7 @@ package com.xolo.labs.junit.libs;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -16,10 +17,10 @@ import static org.mockito.Mockito.never;
  * Test para sumar dos enteros
  * Utilizando 100% mockito
  */
+@RunWith(MockitoJUnitRunner.class)
 class SumadorV2Test {
 
     // 1. Preperamos el mock para el test
-    @Mock
     private Sumador sumador;
 
     @BeforeEach

@@ -17,7 +17,6 @@ import static org.mockito.Mockito.never;
  * Test para sumar dos enteros
  * Utilizando 100% mockito
  */
-@RunWith(MockitoJUnitRunner.class)
 class SumadorV2Test {
 
     // 1. Preperamos el mock para el test

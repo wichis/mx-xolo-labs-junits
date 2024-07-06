@@ -1,11 +1,10 @@
 package com.xolo.labs.junit.libs;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -15,19 +14,16 @@ import static org.mockito.Mockito.never;
 
 /**
  * Test para sumar dos enteros
- * Utilizando 100% mockito
+ * Utilizando mockito annotations
  */
-class SumadorV2Test {
 
-    // 1. Preperamos el mock para el test
+// Utilizamos la anotacion @ExtendWith para poder utilizar las anotaciones de mockito
+// Otra forma de hacerlo es utilizando junit 4 con la anotacion @RunWith(MockitoJUnitRunner)
+@ExtendWith(MockitoExtension.class)
+class SumadorV4Test {
+
+    @Mock // Inicializamos el mock
     private Sumador sumador;
-
-    @BeforeEach
-    void setUp() {
-        // 2. Inicializamos el mock, OJO: no se está haciendo o usando elmetodo real.
-        // PD: Mockito lo hace por nosotros para poder controlar el objeto mockeado
-        sumador = Mockito.mock(Sumador.class);
-    }
 
     /**
     /**

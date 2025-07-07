@@ -39,7 +39,20 @@ class SumadorV1Test {
         });
     }
 
-
+    /**
+     * Vamos a probar que el metodo sumar se llame con los argumentos validos
+     * Notes:
+     * Si no usamos mockito:
+     * - No podemos verificar que un método se llame
+     * - No podemos verificar que un método no se llame
+     * - No podemos verificar que un método se llame con ciertos argumentos
+     * -No podemos forzar la verificación de un método, generando una excepción si no se llama
+     * Si usamos mockito:
+     * - Mockito puede forzar la verificación de un método, generando una excepción si no se llama
+     * - Mockito puede verificar que un método no se llame
+     *
+     * Ver eejmplo en SumadorV2Test.java, ahi usamos mockito
+     */
     @Test
     void printSuma() {
         Sumador sumador = new Sumador();

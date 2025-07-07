@@ -98,9 +98,11 @@ class SumadorV2Test {
 
     @Test
     void printSuma_withStumbbing(){
+        // 3. forzamos que el metodo printSuma lance una excepcion
         doThrow(new RuntimeException()).when(sumador).printSuma(10, 7);
-        // Verificamos que otro metodo fuera del contexto de la prueba no se haya llamado
+        // 4. Verificamos que otro metodo fuera del contexto de la prueba no se haya llamado
         Mockito.verify(sumador, never()).sumar(10, 7);
+        // 5. Verificamos que el metodo printSuma fue llamado con los argumentos 10, 7
         assertThrows(RuntimeException.class, () -> sumador.printSuma(10, 7));
     }
 }

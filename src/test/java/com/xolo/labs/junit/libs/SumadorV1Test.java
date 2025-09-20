@@ -1,22 +1,18 @@
 package com.xolo.labs.junit.libs;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.never;
 
 /**
- * Test para sumar dos enteros
- * Utilizando sin usar mockito
+ * Pruebas unitarias para la clase Sumador.
+ * Estas pruebas utilizan únicamente la biblioteca JUnit, sin Mockito ni otras herramientas de mockeo.
  */
 class SumadorV1Test {
 
-
     /**
-     * Simple basic test.
+     * Prueba básica de suma de dos enteros.
+     * Verifica que la suma de dos números enteros sea correcta.
      */
     @Test
     void sumar() {
@@ -25,6 +21,9 @@ class SumadorV1Test {
         assertEquals(12, sumador.sumar(6, 6));
     }
 
+    /**
+     * Prueba que sumar lance NullPointerException si alguno de los argumentos es null.
+     */
     @Test
     void sumar_null(){
         Sumador sumador = new Sumador();
@@ -40,18 +39,9 @@ class SumadorV1Test {
     }
 
     /**
-     * Vamos a probar que el metodo sumar se llame con los argumentos validos
-     * Notes:
-     * Si no usamos mockito:
-     * - No podemos verificar que un método se llame
-     * - No podemos verificar que un método no se llame
-     * - No podemos verificar que un método se llame con ciertos argumentos
-     * -No podemos forzar la verificación de un método, generando una excepción si no se llama
-     * Si usamos mockito:
-     * - Mockito puede forzar la verificación de un método, generando una excepción si no se llama
-     * - Mockito puede verificar que un método no se llame
-     *
-     * Ver eejmplo en SumadorV2Test.java, ahi usamos mockito
+     * Prueba que el método printSuma se ejecuta correctamente con argumentos válidos.
+     * Nota: Al no usar Mockito, no es posible verificar las llamadas al método ni los argumentos utilizados.
+     * Para ejemplos con Mockito, consultar SumadorV2Test.java.
      */
     @Test
     void printSuma() {
